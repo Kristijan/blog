@@ -10,6 +10,8 @@ tags:
   - "jfs2"
 ---
 
+## The problem
+
 I think at some point during a systems administrators life span, they see the below error message when trying to mount a filesystem.
 
 ```terminal
@@ -21,6 +23,8 @@ The superblock on /dev/fslv01 is dirty.  Run a full fsck to fix.
 
 Great! Let's run the `fsck` command, cross our fingers, and hope that the superblock is repaired and we can mount the filesystem. However, say the dirty filesystem is 3 TB in size? Depending on the extent of the damage, running an `fsck` on a 3 TB filesystem can take quite some time (we're talking hours here!). Let's also paint a perfect picture and say that we're willing to let `fsck` run its course no matter how long it takes (This is the preffered method). What if though, the `fsck` fails, and we still can't mount the filesystem?
 
+## The options
+
 We have two options here:
 
 1. Restore the filesystem from backup
@@ -30,7 +34,10 @@ Taken from the `fsdb` man page:
 
 > "The fsdb command enables you to examine, alter, and debug a file system, specified by the FileSystem parameter. The command provides access to file system objects, such as blocks, i-nodes, or directories. You can use the fsdb command to examine and patch damaged file systems. Key components of a file system can be referenced symbolically. This feature simplifies the procedures for correcting control-block entries and for descending the file system tree."
 
-At this stage, I'd like to point out that manually editing filesystem objects is dangerous. I take no responsibility for any downtime, loss of data, loss of limbs, and abuse from management. It's imperitive that you have a backup of the filesystem data, which in a worst case scenario, you can restore from.
+> At this stage, I'd like to point out that manually editing filesystem objects is dangerous. It's imperitive that you have a backup of the filesystem data, which in a worst case scenario, you can restore from.
+{: .prompt-warning }
+
+## Using fsdb
 
 The below is done on a test 10 GB JFS2 filesystem. After the example I explain a little more on exactly what we're modifying.
 
