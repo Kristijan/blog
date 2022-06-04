@@ -26,7 +26,7 @@ IBM have created a [self-service portal](https://www-304.ibm.com/support/custome
 
 All this information can be gathered from either the HMC GUI or the CLI. Preferring to work on the CLI, I've written a function (inspiration from Brian Smith) that collects and generates all the data the website requires in a nice to read format (well, nicer to read than what's presented via the `lscod` command).
 
-```console
+```terminal
 kristijan@hmc:~> source onoffdetails
  
 kristijan@hmc:~> onoffdetails

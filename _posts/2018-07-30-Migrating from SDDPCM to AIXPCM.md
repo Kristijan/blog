@@ -20,7 +20,7 @@ From the man page for `manage_disk_drivers`
 
 > If the present driver attribute is set to NO_OVERRIDE, the AIX operating system selects an alternate path control module (PCM), such as Subsystem Device Driver Path Control Module (SDDPCM), if it is installed.
 
-```console
+```terminal
 # manage_disk_drivers -l
 Device              Present Driver        Driver Options
 2810XIV             AIX_AAPCM             AIX_AAPCM,AIX_non_MPIO
@@ -44,7 +44,7 @@ IBMSVC              NO_OVERRIDE           NO_OVERRIDE,AIX_AAPCM,AIX_non_MPIO
 
 ## Switch to using AIXPCM
 
-```console
+```terminal
 # manage_disk_drivers -d IBMSVC -o AIX_AAPCM
  ********************** ATTENTION *************************
   For the change to take effect the system must be rebooted
@@ -52,7 +52,7 @@ IBMSVC              NO_OVERRIDE           NO_OVERRIDE,AIX_AAPCM,AIX_non_MPIO
 
 After the reboot, you will now see AIX_AAPCM as the present driver being used.
 
-```console
+```terminal
 # manage_disk_drivers -l
 Device              Present Driver        Driver Options
 2810XIV             AIX_AAPCM             AIX_AAPCM,AIX_non_MPIO
@@ -83,7 +83,7 @@ A few things to keep in mind.
 
 Taking the IBM recommendations into account, I'll set the hdisk attributes accordingly.
 
-```console
+```terminal
 # lsdev -Cc disk -F name | while read -r hdisk; do chdev -l ${hdisk} -a queue_depth=32 -a reserve_policy=no_reserve -a algorithm=shortest_queue -P; done
 hdisk0 changed
 hdisk1 changed
@@ -91,7 +91,7 @@ hdisk1 changed
 
 Another handy command, which isn't related to the overall driver migration, is using `chdef` to change the default values of the predefined attributes in ODM. Any future LUN's presented to the host will now have the `queue_depth`, `reserve_policy`, and `algorithm` set to the values I want.
 
-```console
+```terminal
 # chdef -a queue_depth=32 -c disk -s fcp -t mpioosdisk
 queue_depth changed
 # chdef -a reserve_policy=no_reserve -c disk -s fcp -t mpioosdisk
@@ -104,7 +104,7 @@ algorithm changed
 
 Should you need to go back to using SDDPCM as the driver, and haven't removed it, you can use `manage_disk_drivers` to flip back and reboot.
 
-```console
+```terminal
 # manage_disk_drivers -d IBMSVC -o NO_OVERRIDE
  ********************** ATTENTION *************************
  For the change to take effect the system must be rebooted

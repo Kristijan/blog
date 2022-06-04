@@ -18,7 +18,7 @@ If you're following this, I'm taking the assumption that your cluster is already
 
 The `cluster.es.nfs.rte` fileset needs to be installed so that PowerHA can work with HANFS.
 
-```console
+```terminal
 # lslpp -l cluster.es.nfs.rte
   Fileset                      Level  State      Description
   ----------------------------------------------------------------------------
@@ -31,7 +31,7 @@ Path: /etc/objrepos
 
 Also, since we're dealing with NFS, we need to make sure we have the portmapper daemon running.
 
-```console
+```terminal
 # lssrc -s portmap
 Subsystem         Group            PID          Status
  portmap          portmap          213160       active
@@ -67,7 +67,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     The NFSv4 domain needs to be set on all cluster nodes which will be responsible for taking on the RG_nfs resource group in the event of a failure.
 
-    ```console
+    ```terminal
     # chnfsdom                  <- This will show the current NFS domain
     # chnfsdom [new_domain]     <- To set a new NFS domain
     ```
@@ -76,7 +76,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     The mount points need to be created on all cluster nodes which will be responsible for taking on the RG_nfs resource group in the event of a failure.
 
-    ```console
+    ```terminal
     # mkdir -p /home/kristian
     # mkdir -p /data
     ```
@@ -93,7 +93,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     Create the logical volumes using the following path.
 
-    ```console
+    ```terminal
     # smit hacmp
         -> System Management (C-SPOC)
           -> HACMP Logical Volume Management
@@ -103,7 +103,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     Create the filesystems using the following path.
 
-    ```console
+    ```terminal
     # smit hacmp
         -> System Management (C-SPOC)
           -> HACMP Logical Volume Management
@@ -114,7 +114,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     We should now see the 2 filesystems which we are exporting and the stable storage filesystem apart of the shared volume group
 
-    ```console
+    ```terminal
     # lsvg -l haNFSvg
     haNFSvg:
     LV NAME              TYPE       LPs     PPs     PVs  LV STATE       MOUNT POINT
@@ -133,7 +133,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     Create an Application Server using the following path.
 
-    ```console
+    ```terminal
     # smit hacmp
         -> Extended Configuration
           -> Extended Resource Configuration
@@ -144,7 +144,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     To configure Application Server monitoring, use the following path.
 
-    ```console
+    ```terminal
     # smit hacmp
         -> Extended Configuration
           -> Extended Resource Configuration
@@ -160,7 +160,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     Modify the resource group using the following path.
 
-    ```console
+    ```terminal
     # smit hacmp
         -> Extended Configuration
           -> Extended Resource Configuration
@@ -168,7 +168,7 @@ With the above information in hand, we're ready to start configuring HANFS.
               -> Change/Show Resources and Attributes for a Resource Group
     ```
 
-    ```console
+    ```terminal
     Service IP Labels/Addresses                     [serviceip-nfs]
     Application Servers                             [app_nfsv4]
     
@@ -189,7 +189,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     Just like NFS has `/etc/exports`, HANFS has `/usr/es/sbin/cluster/etc/exports`. If you need to specify NFS options, you MUST use `/usr/es/sbin/cluster/etc/exports` and not `/etc/exports`. For help creating the exports file, you can use `smit mknfsexp`.
 
-    ```console
+    ```terminal
     * Pathname of directory to export                   []
     Anonymous UID                                     [-2]
     Public filesystem?                                no
@@ -203,7 +203,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     We now need to synchronize our changes to the other cluster nodes
 
-    ```console
+    ```terminal
     # smit hacmp
         -> Extended Configuration
           -> Extended Verification and Synchronization
@@ -215,14 +215,14 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     To bring the resource group online.
 
-    ```console
+    ```terminal
     # smit hacmp
         ->  System Management (C-SPOC)
           -> HACMP Resource Group and Application Management
             -> Bring a Resource Group Online
     ```
 
-    ```console
+    ```terminal
     # tail -f /var/hacmp/log/hacmp.out
     ...
     +RG_nfs:cl_activate_nfs(.110):/home/kristian;/hanfs_home_kristian[nfs_mount+102] : Attempt 0/5 to NFS-mount at Jul 26 11:01:21.000
@@ -231,7 +231,7 @@ With the above information in hand, we're ready to start configuring HANFS.
 
     You should now see the filesystems mounted.
 
-    ```console
+    ```terminal
     # mount
     node          mounted                     mounted over            vfs         date            options
     --------        --------------              ---------------         ------      ------------    ---------------

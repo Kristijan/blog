@@ -22,7 +22,7 @@ I built a basic two-node PowerHA SystemMirror (HACMP) cluster for my team a litt
 
 The error from the NIM log.
 
-```console
+```terminal
 NIM# nim -o define -t mksysb -a server=master -a location=/export/nim/mksysb/powerha1.mksysb -a source=powerha1 -a mk_image=yes -a mksysb_flags=iepmX powerha1_mksysb
 0042-001 nim: processing error encountered on "master":
    0042-001 m_mkbosi: processing error encountered on "powerha1":
@@ -43,7 +43,7 @@ The file access permissions do not allow the specified action.
 
 Interface configuration on powerha1.
 
-```console
+```terminal
 powerha1# ifconfig -a
 en0: flags=1e084863,104c0<UP,BROADCAST,NOTRAILERS,RUNNING,SIMPLEX,MULTICAST,GROUPRT,64BIT,CHECKSUM_OFFLOAD(ACTIVE),LARGESEND,CHAIN>
         inet 10.10.10.102 netmask 0xffffff00 broadcast 10.10.10.255
@@ -85,7 +85,7 @@ Cluster Applications and Resources
 
 After making the change, the order of the IP aliases within the powerha1 node look like this.
 
-```console
+```terminal
 powerha1# ifconfig -a
 en0: flags=1e084863,104c0<UP,BROADCAST,NOTRAILERS,RUNNING,SIMPLEX,MULTICAST,GROUPRT,64BIT,CHECKSUM_OFFLOAD(ACTIVE),LARGESEND,CHAIN>
         inet 10.10.10.101 netmask 0xffffff00 broadcast 10.10.10.255

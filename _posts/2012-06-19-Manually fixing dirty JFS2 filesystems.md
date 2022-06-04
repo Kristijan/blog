@@ -12,7 +12,7 @@ tags:
 
 I think at some point during a systems administrators life span, they see the below error message when trying to mount a filesystem.
 
-```console
+```terminal
 # mount /test
 Replaying log for /dev/fslv01.
 mount: /dev/fslv01 on /test: Unformatted or incompatible media
@@ -34,7 +34,7 @@ At this stage, I'd like to point out that manually editing filesystem objects is
 
 The below is done on a test 10 GB JFS2 filesystem. After the example I explain a little more on exactly what we're modifying.
 
-{% highlight console linenos %}
+```bash
 # fsdb /test
  
 File System:                    /test
@@ -104,9 +104,9 @@ Please enter: field-number value > 12 0x0
 [43-49] <...snapshot info...>           [50] s_maxext:  0x00000000
 display_super: [m]odify, [s]napshot info or e[x]it: x
 > q
-{% endhighlight %}
+```
 
-```console
+```terminal
 # mount /test
 # df -g /test
 Filesystem    GB blocks      Free %Used    Iused %Iused Mounted on

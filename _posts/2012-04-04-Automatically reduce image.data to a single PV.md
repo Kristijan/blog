@@ -29,7 +29,7 @@ The below script does the following :
 
 The script takes two values, the resulting hdisk on the other node (In my case, hdisk0 for rootvg, and hdisk1 for datavg), and the location of the image.data or vg.data file.
 
-```console
+```terminal
 root@AIX #> ./modify_data.sh
 Usage: ./modify_data.sh -d <hdisk> -f <file>
         -d      Destination hdisk on P7 LPAR

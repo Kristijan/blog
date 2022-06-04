@@ -13,7 +13,7 @@ tags:
 
 We recently upgraded the firmare on our Power frame, which required shutting down some of our AIX LPAR's. The firmware upgrade went well, as did starting up all the AIX LPAR's, except for one. This particular LPAR booted to HMC LED code 2700 and hung there. I restarted the partition to the Open Firmware (OF) prompt, and tried booting again using verbose mode to see where the boot process was hanging.
 
-```console
+```terminal
 ----------------
 Attempting to configure device 'fscsi6'
  cfgmgr Time: 0        LEDS: 0x2700
@@ -58,7 +58,7 @@ Number of running methods: 2
 
 To verbose boot from OF, you can do the following from the HMC.
 
-```console
+```terminal
 $ chsysstate -r lpar -m <frame> -o on -n -b of -f -p <lpar>
 $ mkvterm -m <frame> -p <lpar>
 0> boot -s verbose
@@ -68,7 +68,7 @@ From the output, we can see that the virtual fibre channel adapter scans for vis
 
 Note that I've deliberately masked the Symmetrix and LUN ID's.
 
-```console
+```terminal
 Name: aix_lpar1
  
    Symmetrix ID       : XXXXXXXXXX
