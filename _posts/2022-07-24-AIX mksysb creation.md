@@ -57,7 +57,7 @@ hostname = socket.gethostname()
 current_time = datetime.now()
 
 # Create list of mksysb resources from the NIM server
-nim_mksysb_list = subprocess.check_output(f"/usr/sbin/nimclient -l -L -t mksysb {hostname} | /usr/bin/awk '/{hostname}/{{ print $1 }}'", shell=True, encoding='utf-8').split()
+nim_mksysb_list = subprocess.check_output(f"/usr/sbin/nimclient -l -L -t mksysb {hostname} | /usr/bin/awk '/{hostname}/{% raw %}{{ print $1 }}{% endraw %}'", shell=True, encoding='utf-8').split()
 # If the subprocess above returns no values, the result is a
 # single item list with an empty string. Let's strip that out.
 nim_mksysb_list = filter(None, nim_mksysb_list)
@@ -65,7 +65,7 @@ nim_mksysb_list = filter(None, nim_mksysb_list)
 # Parse list of NIM mksysb backups and compare creation date
 if nim_mksysb_list:
     for mksysb in nim_mksysb_list:
-        mksysb_creation_time = subprocess.check_output(f"/usr/sbin/nimclient -l -l {mksysb} | /usr/bin/awk -F = '/creation_date/{{ print $2 }}'", shell=True, encoding='utf-8').strip()
+        mksysb_creation_time = subprocess.check_output(f"/usr/sbin/nimclient -l -l {mksysb} | /usr/bin/awk -F = '/creation_date/{% raw %}{{ print $2 }}{% endraw %}'", shell=True, encoding='utf-8').strip()
         mksysb_creation_time = datetime.strptime(''.join(mksysb_creation_time), '%c')
         elapsed = current_time - mksysb_creation_time
         if elapsed.days < 15:
