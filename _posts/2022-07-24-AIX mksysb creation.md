@@ -1,9 +1,9 @@
 ---
 title: "AIX mksysb creation date"
 date: "2022-07-24"
-categories: 
+categories:
   - "aix"
-tags: 
+tags:
   - "python"
   - "scripting"
   - "shell"
