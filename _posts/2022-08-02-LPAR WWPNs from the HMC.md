@@ -100,4 +100,4 @@ lparwwpn () {
 
 I've recently come across [EEZH](https://github.com/opokam/eezh){:target="_blank"}, which appears to be a fork of Brian Smith's original EZH code. Might be more beneficial to add `lparwwpn` into that project.
 
-While we're on the subject of displaying WWPNs, here is a recent post from [Chris Gibon](https://twitter.com/cgibbo){:target="_blank"} on [Displaying WWPN information on Power10 Systems](http://gibsonnet.net/blog/cgaix/html/Displaying_WWPN_information_on_Power10_Systems.html){:target="_blank"}.
+While we're on the subject of displaying WWPNs, here is a recent post from [Chris Gibson](https://twitter.com/cgibbo){:target="_blank"} on [Displaying WWPN information on Power10 Systems](http://gibsonnet.net/blog/cgaix/html/Displaying_WWPN_information_on_Power10_Systems.html){:target="_blank"}.
