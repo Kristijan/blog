@@ -6,6 +6,7 @@ categories:
 tags:
   - "aix"
   - "nim"
+  - "puppet"
 ---
 
 Most will be familiar with using the `emgr` command to install emergency fixes (eFixes) on AIX. You can additionally use a Network Installation Management [(NIM)](https://www.ibm.com/docs/en/aix/7.2?topic=installing-network-installation-management){:target="_blank"} server in either a push or pull operation to install fixes, which is handy when deploying at scale (more on this later in the post with deploying fixes at scale with Puppet).
