@@ -62,9 +62,11 @@ if lsps -ac | grep -Evq '^#|^hd6'; then
   count=0
   while [[ "${count}" -lt "${#paging_name[*]}" ]]; do
     if [[ ( "${paging_active[$count]}" = "yes" ) && ( "${paging_size[$count]%??}" -gt "${hd6_size%??}" ) ]]; then
-      echo "At least one alternate paging space detected and active [${paging_name[$count]}]" > /dev/console
-      echo 'Deactivating default paging space hd6...' > /dev/console
-      swapoff /dev/hd6 > /dev/console
+      {
+        echo "At least one alternate paging space detected and active [${paging_name[$count]}]"
+        echo 'Deactivating default paging space hd6...'
+        swapoff /dev/hd6
+      } > /dev/console
       exit
     else
       (( count+=1 ))
