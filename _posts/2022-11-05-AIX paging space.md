@@ -8,7 +8,7 @@ tags:
   - "paging"
 ---
 
-An AIX installation will come with a default configured paging space logical volume (`hd6`). You can increase the size of the logical volume to suit your needs, but at some stage, you may have a requirement to either expand the logical volume greater than the size of the rootvg, or more than 64GB (the current maximum size of a paging logical volume). There are a number of best practise when it comes to paging space on AIX.
+An AIX installation will come with a default configured paging space logical volume (`hd6`). You can increase the size of the logical volume to suit your needs, but at some stage, you may have a requirement to either expand the logical volume greater than the size of the rootvg, or more than 64GB (the current maximum size of a paging logical volume). There are a number of best practises when it comes to paging space on AIX.
 
 1. Don't span paging logical volumes across different disks.
 2. Create additional paging logical volumes of equal size. As paging space is allocated in a round-robin type manner, smaller paging spaces will fill up quicker than larger ones.
