@@ -18,12 +18,8 @@ Below are some screenshots of the script output.
 
 ![Demo](https://raw.githubusercontent.com/Kristijan/hmc_profile_diff/main/img/demo.gif)
 
-Compare and show all LPAR attributes
-
 ![Compare All](https://raw.githubusercontent.com/Kristijan/hmc_profile_diff/main/img/compare_all.png){: width="700" height="400" }
 _Compare all LPAR profile attributes_
-
-Compare and show only different LPAR attributes
 
 ![Compare Diff Only](https://raw.githubusercontent.com/Kristijan/hmc_profile_diff/main/img/compare_diffonly.png){: width="700" height="400" }
 _Compare all LPAR profile attributes and only show differences_
