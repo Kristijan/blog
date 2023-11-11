@@ -4,8 +4,9 @@
   type: github
   icon: 'fab fa-github'
 -
-  type: twitter
-  icon: 'fab fa-twitter'
+  type: mastodon
+  icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
+  url:  'https://infosec.exchange/@kristijan'                  # Fill with your mastodon account page
 -
   type: email
   icon: 'fas fa-envelope'
