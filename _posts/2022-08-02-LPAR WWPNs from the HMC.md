@@ -13,7 +13,7 @@ tags:
 
 There are several ways to find the WWPNs for a virtual fibre channel adapter. You can log into the individual LPAR's, get them from the Hardware Management Console (HMC), or from another asset discovery tool that may contain this data.
 
-Using [EZH](http://ezh.sourceforge.net){:target="_blank"} functions originally written by Brian Smith, I've added a function named `lparwwpn` that takes a list of LPAR names as arguments, and prints the virtual fibre channel WWPNs.
+Using [EZH](https://ezh.sourceforge.net){:target="_blank"} functions originally written by Brian Smith, I've added a function named `lparwwpn` that takes a list of LPAR names as arguments, and prints the virtual fibre channel WWPNs.
 
 ```terminal
 kristijan@hmc:~> source lparwwpn
@@ -100,4 +100,4 @@ lparwwpn () {
 
 I've recently come across [EEZH](https://github.com/opokam/eezh){:target="_blank"}, which appears to be a fork of Brian Smith's original EZH code. Might be more beneficial to add `lparwwpn` into that project.
 
-While we're on the subject of displaying WWPNs, here is a recent post from [Chris Gibson](https://twitter.com/cgibbo){:target="_blank"} on [Displaying WWPN information on Power10 Systems](http://gibsonnet.net/blog/cgaix/html/Displaying_WWPN_information_on_Power10_Systems.html){:target="_blank"}.
+While we're on the subject of displaying WWPNs, here is a recent post from [Chris Gibson](https://twitter.com/cgibbo){:target="_blank"} on [Displaying WWPN information on Power10 Systems](https://gibsonnet.net/blog/cgaix/html/Displaying_WWPN_information_on_Power10_Systems.html){:target="_blank"}.
