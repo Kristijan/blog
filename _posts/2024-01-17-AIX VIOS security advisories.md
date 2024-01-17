@@ -1,9 +1,9 @@
 ---
-title: "AIX & VIOS Security Advisories"
+title: "AIX/VIOS Security Advisories"
 date: "2024-01-17"
 categories: 
   - "aix"
-  - "vios
+  - "vios"
 tags: 
   - "advisories"
   - "aix"
