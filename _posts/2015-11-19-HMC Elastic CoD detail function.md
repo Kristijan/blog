@@ -12,7 +12,7 @@ tags:
   - "shell-scripting"
 ---
 
-IBM have created a [self-service portal](https://www-304.ibm.com/support/customercare/ss/escod/home){:target="_blank"} for its customers to allow them to request their own Elastic Capacity on Demand codes for their registered systems. In my time using the new website, the codes have been generated and sent to me via email on average between 30 & 45 minutes. This significantly reduces not only the time taken to get new codes posted to the [POD website](http://www-912.ibm.com/pod/pod){:target="_blank"}, but also eliminates the process of having to reach out to your IBM representative to request them from the COD office in the USA. The website does require a number of fields to be filled in for the code to be generated automatically:
+IBM have created a [self-service portal](https://www-304.ibm.com/support/customercare/ss/escod/home){:target="_blank"} for its customers to allow them to request their own Elastic Capacity on Demand codes for their registered systems. In my time using the new website, the codes have been generated and sent to me via email on average between 30 & 45 minutes. This significantly reduces not only the time taken to get new codes posted to the [POD website](https://www-912.ibm.com/pod/pod){:target="_blank"}, but also eliminates the process of having to reach out to your IBM representative to request them from the COD office in the USA. The website does require a number of fields to be filled in for the code to be generated automatically:
 
 - System type
 - System serial number
