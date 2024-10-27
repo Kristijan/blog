@@ -16,7 +16,7 @@ tmux has a concept of sessions, windows, and panes. A session is a collection of
 
 This flow I find time consuming. I'd much rather bring up the list of sessions, and search to narrow down where I want to switch to. So piggy backing on another tool that I use, I wrote a small little tmux plugin that brings up a fzf window with my sessions, windows, and panes, and lets me quickly get to the pane I want.
 
-[tmux-fzf-pane-switch](https://github.com/Kristijan/tmux-fzf-pane-switch){:target="_blank"}
+[https://github.com/Kristijan/tmux-fzf-pane-switch](https://github.com/Kristijan/tmux-fzf-pane-switch){:target="_blank"}
 
 Using the plugin with the default mapping of `prefix + s`, I now get a [fzf](https://github.com/junegunn/fzf){:target="_blank"} window where I can narrow my search by filtering on the `#{window_name}`, `#{pane_title}`, or `#{pane_current_command}`. I've got a demo video below that shows it in action.
 
