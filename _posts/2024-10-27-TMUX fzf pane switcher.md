@@ -1,6 +1,6 @@
 ---
 title: "TMUX fzf pane switcher"
-date: "2024-11-27"
+date: "2024-10-27"
 categories: 
   - "tmux"
 tags: 
