@@ -24,3 +24,6 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # Embed asciinema recordings
 gem "jekyll-asciinema"
+
+# Jekyll ATOM feed
+gem 'jekyll-feed'
