@@ -17,46 +17,46 @@ timezone: Australia/Melbourne
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Kristian's Blog                          # the main title
+title: Kristian's Blog # the main title
 
-tagline: AIX | POWER | Puppet | Automation   # it will display as the sub-title
+tagline: AIX | POWER | Puppet | Automation # it will display as the sub-title
 
-description: >-                        # used by seo meta and the atom feed
+description: >- # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://blog.kristijan.org'
+url: "https://blog.kristijan.org"
 
 github:
-  username: Kristijan             # change to your github username
+  username: Kristijan # change to your github username
 
 twitter:
-  username: Kristijan            # change to your twitter username
+  username: Kristijan # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Kristian Milos
-  email: kris@kristijan.org             # change to your email address
+  email: kris@kristijan.org # change to your email address
   links:
     # The first element serves as the copyright owner's link
     # - https://twitter.com/Kristijan      # change to your twitter homepage
-    - https://github.com/Kristijan       # change to your github homepage
+    - https://github.com/Kristijan # change to your github homepage
     - https://www.linkedin.com/in/kristianmilos
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
 
-google_site_verification:               # fill in to your verification string
+google_site_verification: # fill in to your verification string
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id:                 # fill in your Google Analytics ID
+  id: # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
-    proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
-    cache_path:       # the local PV cache data, friendly to visitors from GFW region
+    proxy_endpoint: # fill in the Google Analytics superProxy endpoint of Google App Engine
+    cache_path: # the local PV cache data, friendly to visitors from GFW region
 
 # Prefer color scheme setting.
 #
@@ -79,20 +79,20 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: 'assets/images/kristian.jpg'
+avatar: "assets/images/kristian.jpg"
 
 # boolean type, the global switch for ToC in posts.
 toc: true
 
 comments:
-  active: giscus         # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  active: giscus # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
   disqus:
-    shortname:    # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
-    repo:         # <gh-username>/<repo>
-    issue_term:   # < url | pathname | title | ...>
+    repo: # <gh-username>/<repo>
+    issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
     repo: Kristijan/blog
@@ -118,6 +118,13 @@ paginate: 10
 
 # The base URL of your site
 baseurl: ""
+
+plugins:
+  - jekyll-feed
+
+feed:
+  icon: /assets/img/favicons/favicon-16x16.png
+  logo: /assets/img/favicons/favicon-32x32.png
 
 # ------------ The following options are not recommended to be modified ------------------
 
