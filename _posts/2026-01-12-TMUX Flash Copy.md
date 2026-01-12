@@ -17,7 +17,7 @@ I built [https://github.com/Kristijan/flash-copy.tmux](https://github.com/Kristi
 ![Demonstration of tmux-flash-copy in action](assets/images/tmux-flash-copy-demo.gif)
 
 In the demonstration above, you can see how it works.
-1. I launch the TMUX Flash Copy plugin using the default bind key `<tmux prefix> Shift + f`
+1. I launch the TMUX Flash Copy plugin using the default key binding `<tmux prefix> Shift + f`
 2. The word `option_override` is what I want to copy, so I start searching for it. You can see as I search, words are highlighted in the pane and labels are assigned with each match.
 3. I press the label key `j` associated with the word `option_override`, and it's copied to the system clipboard.
 
@@ -33,8 +33,8 @@ I tried to implement as many of the visual features from flash.nvim as possible,
 - Configurable Word Boundaries: Honours tmux's `word-separators` by default, with override support.
 
 There are many customisable options available, including:
-- Customising the prompt position, indicator and colour.
+- Customising the prompt position, indicator, and colour.
 - Changing the colours used for highlighted matches and labels.
-- Use either case sensitive or case insensitive search.
+- Using either case sensitive or case insensitive searching.
 
-You can find a lot more detail and configuration options in the [README](https://github.com/Kristijan/flash-copy.tmux/blob/master/README.md). I welcome any feedback or contributions.
+You can find a lot more detail and configuration options in the [README](https://github.com/Kristijan/flash-copy.tmux/blob/master/README.md), and I welcome any feedback or contributions.
